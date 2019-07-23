@@ -1,0 +1,13 @@
+name: Clock
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "13.0"
+targets:
+  Clock:
+    type: application
+    platform: iOS
+    sources: [Clock]
+    settings:
+      base:
+        SWIFT_VERSION: 5.0
