@@ -5,13 +5,16 @@ import Combine
 import UIKit
 
 func systemTimePublisher() -> AnyPublisher<Date, Never> {
-    #warning("1. Funktion so implementieren, das ein Timer-Publisher erstellt wird mittels Timer.publish, autoconnect verwenden um diesen automatisch zu verbinden und mit eraseToAnyPublisher die Typsignatur zu AnyPublisher bereinigen.")
-    fatalError()
+    Timer.publish(every: TimeInterval(1), on: .main, in: .default)
+        .autoconnect()
+        .eraseToAnyPublisher()
 }
 
 class TimeViewController: UIViewController {
 
     @IBOutlet var timeLabel: UILabel!
+
+    var connections = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,13 +23,22 @@ class TimeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        #warning("2. Datumswert des `systemTimePublisher` mit `map` formatieren und mit `sink` dem Label zuweisen")
+        systemTimePublisher()
+            .map { date in
+                DateFormats.timeOnlyFormatter.string(from: date)
+            }
+            .sink { [weak self] str in
+                debugPrint("Updated Text to \(str)")
+                self?.timeLabel.text = str
+            }
+            .store(in: &self.connections)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        #warning("3. Aufräumarbeiten: cancel implementieren")
+        self.connections.forEach { $0.cancel() }
+        self.connections.removeAll()
     }
 
 }
