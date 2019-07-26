@@ -24,13 +24,8 @@ class TimeViewController: UIViewController {
         super.viewWillAppear(animated)
 
         systemTimePublisher()
-            .map { date in
-                DateFormats.timeOnlyFormatter.string(from: date)
-            }
-            .sink { [weak self] str in
-                debugPrint("Updated Text to \(str)")
-                self?.timeLabel.text = str
-            }
+            .map { date in DateFormats.timeOnlyFormatter.string(from: date) }
+            .assign(to: \.text, on: self.timeLabel)
             .store(in: &self.connections)
     }
 
