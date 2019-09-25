@@ -1,13 +1,7 @@
 // (C) 2019, Ralf Ebert - iOS Example Project: Clock
 // License: https://opensource.org/licenses/0BSD
 
-import Combine
 import UIKit
-
-func systemTimePublisher() -> AnyPublisher<Date, Never> {
-    #warning("1. Funktion so implementieren, das ein Timer-Publisher erstellt wird mittels Timer.publish, autoconnect verwenden um diesen automatisch zu verbinden und mit eraseToAnyPublisher die Typsignatur zu AnyPublisher bereinigen.")
-    fatalError()
-}
 
 class TimeViewController: UIViewController {
 
@@ -20,13 +14,29 @@ class TimeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        #warning("2. Datumswert des `systemTimePublisher` mit `map` formatieren und mit `sink` dem Label zuweisen")
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        #warning("3. Aufräumarbeiten: cancel implementieren")
+    }
+
+    @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        let title = sender.titleForSegment(at: sender.selectedSegmentIndex)!
+        let mapping = [
+            "S": DateFormatter.Style.short,
+            "M": .medium,
+            "L": .long,
+            "XL": .full,
+        ]
+        let style = mapping[title]!
+    }
+
+    func formatter(style: DateFormatter.Style) -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = style
+        let formattedString = formatter.string(for: Date())
     }
 
 }

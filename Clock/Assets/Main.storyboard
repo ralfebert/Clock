@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14845" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JoQ-BH-EM7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JoQ-BH-EM7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14799.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,16 +16,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="ZZD-ty-8cG">
-                                <rect key="frame" x="134.5" y="403" width="145" height="90.5"/>
+                                <rect key="frame" x="134.5" y="373" width="145" height="150.5"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="l4q-79-hk5">
+                                        <rect key="frame" x="1" y="0.0" width="143" height="32"/>
+                                        <segments>
+                                            <segment title="S"/>
+                                            <segment title="M"/>
+                                            <segment title="L"/>
+                                            <segment title="XL"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="segmentedControlValueChanged:" destination="aMU-go-wZg" eventType="valueChanged" id="1QA-5I-cEy"/>
+                                        </connections>
+                                    </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWe-2r-dec">
-                                        <rect key="frame" x="44.5" y="0.0" width="56.5" height="31.5"/>
+                                        <rect key="frame" x="44.5" y="60" width="56.5" height="31.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0m-dB-IYT">
-                                        <rect key="frame" x="0.0" y="60.5" width="145" height="30"/>
+                                        <rect key="frame" x="0.0" y="120.5" width="145" height="30"/>
                                         <state key="normal" title="Show another screen"/>
                                         <connections>
                                             <segue destination="4yZ-rW-1Ub" kind="show" id="7fP-v3-uNI"/>
@@ -34,7 +46,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="ZZD-ty-8cG" firstAttribute="centerY" secondItem="5sp-TS-LGi" secondAttribute="centerY" id="BBc-Gv-p3h"/>
                             <constraint firstItem="ZZD-ty-8cG" firstAttribute="centerX" secondItem="5sp-TS-LGi" secondAttribute="centerX" id="Tis-Rr-7sK"/>
@@ -57,7 +69,7 @@
                     <view key="view" contentMode="scaleToFill" id="chR-2s-qdB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mei-1S-mXg"/>
                     </view>
                 </viewController>
