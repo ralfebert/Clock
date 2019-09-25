@@ -4,33 +4,19 @@
 import UIKit
 import Combine
 
-func timePublisher() -> AnyPublisher<Date, Never> {
-    Timer.publish(every: 1, on: .main, in: .default).autoconnect().eraseToAnyPublisher()
-}
-
 class TimeViewController: UIViewController {
 
     @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var segmentedControl: UISegmentedControl!
 
-    let formatPublisher = PassthroughSubject<String, Never>()
+    var model = ClockModel()
     var cancellables = Set<AnyCancellable>()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // S/M/L -> DateFormatter
-        let formatterPublisher = formatPublisher.map(formatterFor(sizeString:))
-        
-        // DateFormatter + Zeit
-        let formatterAndTimePublisher = Publishers.CombineLatest(formatterPublisher, timePublisher())
-        
-        // DateFormatter + Zeit -> String
-        let dateStringPublisher = formatterAndTimePublisher.map { (formatter, date) in
-            formatter.string(from: date)
-        }
-        
+                
         // Senke: Aktualisierung des Labels
-        dateStringPublisher.sink { [weak self] (string) in
+        model.dateStringPublisher.sink { [weak self] (string) in
             self?.timeLabel.text = string
         }.store(in: &self.cancellables)
     }
@@ -46,23 +32,9 @@ class TimeViewController: UIViewController {
     }
 
     @IBAction func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        // TODO: prüfen ob es einfacher zu subscriben geht -> z.B. let pub = NotificationCenter.default.publisher(for: NSNotification.Name.valueChanged, object: segmentedControl)
         let title = sender.titleForSegment(at: sender.selectedSegmentIndex)!
-        formatPublisher.send(title)
+        model.dateStyle = title
     }
 
-}
-
-fileprivate func formatterFor(sizeString: String) -> DateFormatter {
-    let mapping = [
-        "S": DateFormatter.Style.short,
-        "M": .medium,
-        "L": .long,
-        "XL": .full,
-    ]
-    let style = mapping[sizeString]!
-
-    let formatter = DateFormatter()
-    formatter.dateStyle = .none
-    formatter.timeStyle = style
-    return formatter
 }

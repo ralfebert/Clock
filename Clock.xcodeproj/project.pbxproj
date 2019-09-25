@@ -10,6 +10,8 @@
 		227097051EB869B546BD0E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58357C8A67C56C0BDDE2878 /* Main.storyboard */; };
 		396E8736877B4D722069E4E2 /* ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD1C16506FD8D789F70ED /* ClockApp.swift */; };
 		4628CF196116BF490F6AE2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34FACE4951E7516F1B64F26 /* LaunchScreen.storyboard */; };
+		BF937C7B233B663D00F4A9B2 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF937C7A233B663D00F4A9B2 /* ClockModel.swift */; };
+		BF937C7D233B669800F4A9B2 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF937C7C233B669800F4A9B2 /* ClockView.swift */; };
 		BFF9C61522E72489000FAEC7 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9C61422E72489000FAEC7 /* DateFormats.swift */; };
 		D78FD220141B4248B05835CA /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651A8E1044B44FC7180AAE5 /* TimeViewController.swift */; };
 		DDED4A833CF12A6E0B6B081E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FE817D63308C77D7CF7A /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 		4651A8E1044B44FC7180AAE5 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		48175DF2A4644D6B38E8079F /* Clock.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F378DC7C196C3CF9684D64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF937C7A233B663D00F4A9B2 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
+		BF937C7C233B669800F4A9B2 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		BFF9C61422E72489000FAEC7 /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
 		CA9CD1C16506FD8D789F70ED /* ClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockApp.swift; sourceTree = "<group>"; };
 		D58357C8A67C56C0BDDE2878 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -61,6 +65,8 @@
 				0F22004DF14F7FB7D23877A3 /* Assets */,
 				32AA01B3E5A5A33CBE59E591 /* Controller */,
 				BFF9C61322E7247D000FAEC7 /* Common */,
+				BF937C7A233B663D00F4A9B2 /* ClockModel.swift */,
+				BF937C7C233B669800F4A9B2 /* ClockView.swift */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF937C7B233B663D00F4A9B2 /* ClockModel.swift in Sources */,
+				BF937C7D233B669800F4A9B2 /* ClockView.swift in Sources */,
 				BFF9C61522E72489000FAEC7 /* DateFormats.swift in Sources */,
 				396E8736877B4D722069E4E2 /* ClockApp.swift in Sources */,
 				D78FD220141B4248B05835CA /* TimeViewController.swift in Sources */,

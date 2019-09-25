@@ -55,6 +55,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Clock" id="bSG-tv-zLz"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="l4q-79-hk5" id="C7C-Z6-YOQ"/>
                         <outlet property="timeLabel" destination="gWe-2r-dec" id="qXp-E9-cSY"/>
                     </connections>
                 </viewController>
