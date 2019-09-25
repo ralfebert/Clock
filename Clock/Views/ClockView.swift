@@ -20,32 +20,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Combine
-import UIKit
+import SwiftUI
 
-class TimeViewController: UIViewController {
+struct ClockView: View {
 
-    @IBOutlet var timeLabel: UILabel!
-    @IBOutlet var segmentedControl: UISegmentedControl!
+    @ObservedObject var model = ClockModel()
 
-    var model = ClockModel()
-    var subscriptions = Set<AnyCancellable>()
+    var body: some View {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        VStack(spacing: 20) {
+            Picker(selection: $model.dateStyle, label: Text("Date Format")) {
+                ForEach(SizeOption.allCases) { size in
+                    Text(size.description).tag(size)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
 
-        self.segmentedControl.segmentTitles = SizeOption.allCases.map { $0.description }
-        self.segmentedControl.selectedSegmentIndex = 0
+            Text("\(model.formattedTime)")
 
-        self.segmentedControl
-            .publisher(for: \.selectedSegmentIndex)
-            .map { SizeOption.allCases[$0] }
-            .assign(to: \.dateStyle, on: self.model)
-            .store(in: &self.subscriptions)
+        }
+        .padding(10)
 
-        self.model.$formattedTime
-            .sink { [unowned self] in self.timeLabel.text = $0 }
-            .store(in: &self.subscriptions)
     }
+}
 
+struct ClockView_Previews: PreviewProvider {
+    static var previews: some View {
+        ClockView()
+    }
 }

@@ -1,8 +1,27 @@
-// (C) 2019, Ralf Ebert - iOS Example Project: Clock
-// License: https://opensource.org/licenses/0BSD
+// MIT License
+//
+// Copyright (c) 2019 Ralf Ebert
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
-import UIKit
 import SwiftUI
+import UIKit
 
 @UIApplicationMain
 class ClockApp: UIResponder, UIApplicationDelegate {
@@ -12,10 +31,22 @@ class ClockApp: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let window = UIWindow()
-        window.rootViewController = UIHostingController(rootView: ClockView())
+
+        let tabBarController = UITabBarController()
+
+        let vc1 = UIHostingController(rootView: ClockView())
+        vc1.tabBarItem.title = "SwiftUI"
+
+        let vc2 = TimeViewController()
+        vc2.tabBarItem.title = "UIKit"
+
+        tabBarController.viewControllers = [vc1, vc2]
+
+        window.rootViewController = tabBarController
+
         window.makeKeyAndVisible()
         self.window = window
-        
+
         return true
     }
 

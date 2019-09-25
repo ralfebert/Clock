@@ -7,36 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		227097051EB869B546BD0E23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58357C8A67C56C0BDDE2878 /* Main.storyboard */; };
 		396E8736877B4D722069E4E2 /* ClockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9CD1C16506FD8D789F70ED /* ClockApp.swift */; };
 		4628CF196116BF490F6AE2DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E34FACE4951E7516F1B64F26 /* LaunchScreen.storyboard */; };
-		BF937C7B233B663D00F4A9B2 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF937C7A233B663D00F4A9B2 /* ClockModel.swift */; };
-		BF937C7D233B669800F4A9B2 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF937C7C233B669800F4A9B2 /* ClockView.swift */; };
-		BFF9C61522E72489000FAEC7 /* DateFormats.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF9C61422E72489000FAEC7 /* DateFormats.swift */; };
+		7CD0DEAE080BE061B9BF1A89 /* ClockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BC22181480A72F132434BF /* ClockModel.swift */; };
+		8832F28B8D5D75E39E2C962F /* TimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EFE64BE60D908D4BFFBEAA15 /* TimeViewController.xib */; };
+		924EA50A708C571B8F11FCD0 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09160076CB7B4891D4C6327A /* ClockView.swift */; };
+		CE1819C784D150E08062C779 /* UISegmentedControl+SegmentTitles.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBED5DDEFD64FE03B64A434 /* UISegmentedControl+SegmentTitles.swift */; };
 		D78FD220141B4248B05835CA /* TimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4651A8E1044B44FC7180AAE5 /* TimeViewController.swift */; };
 		DDED4A833CF12A6E0B6B081E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7E4FE817D63308C77D7CF7A /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09160076CB7B4891D4C6327A /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		1DC6CC698595993A84DF8B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		35BC22181480A72F132434BF /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
 		4651A8E1044B44FC7180AAE5 /* TimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeViewController.swift; sourceTree = "<group>"; };
 		48175DF2A4644D6B38E8079F /* Clock.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Clock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F378DC7C196C3CF9684D64F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF937C7A233B663D00F4A9B2 /* ClockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockModel.swift; sourceTree = "<group>"; };
-		BF937C7C233B669800F4A9B2 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
-		BFF9C61422E72489000FAEC7 /* DateFormats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormats.swift; sourceTree = "<group>"; };
+		AFBED5DDEFD64FE03B64A434 /* UISegmentedControl+SegmentTitles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISegmentedControl+SegmentTitles.swift"; sourceTree = "<group>"; };
 		CA9CD1C16506FD8D789F70ED /* ClockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockApp.swift; sourceTree = "<group>"; };
-		D58357C8A67C56C0BDDE2878 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D7E4FE817D63308C77D7CF7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFE64BE60D908D4BFFBEAA15 /* TimeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		0BBE659B4F290B97BDA62B5A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09160076CB7B4891D4C6327A /* ClockView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		0F22004DF14F7FB7D23877A3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
 				D7E4FE817D63308C77D7CF7A /* Assets.xcassets */,
 				E34FACE4951E7516F1B64F26 /* LaunchScreen.storyboard */,
-				D58357C8A67C56C0BDDE2878 /* Main.storyboard */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -45,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				4651A8E1044B44FC7180AAE5 /* TimeViewController.swift */,
+				EFE64BE60D908D4BFFBEAA15 /* TimeViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -63,10 +71,10 @@
 			children = (
 				423218815EB1E68A4CD664A6 /* App */,
 				0F22004DF14F7FB7D23877A3 /* Assets */,
+				6B468D88D50FF9FDEB09D7ED /* Common */,
 				32AA01B3E5A5A33CBE59E591 /* Controller */,
-				BFF9C61322E7247D000FAEC7 /* Common */,
-				BF937C7A233B663D00F4A9B2 /* ClockModel.swift */,
-				BF937C7C233B669800F4A9B2 /* ClockView.swift */,
+				6A6335894A5CE18D7FAAD6B0 /* Model */,
+				0BBE659B4F290B97BDA62B5A /* Views */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -79,10 +87,18 @@
 			);
 			sourceTree = "<group>";
 		};
-		BFF9C61322E7247D000FAEC7 /* Common */ = {
+		6A6335894A5CE18D7FAAD6B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BFF9C61422E72489000FAEC7 /* DateFormats.swift */,
+				35BC22181480A72F132434BF /* ClockModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B468D88D50FF9FDEB09D7ED /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AFBED5DDEFD64FE03B64A434 /* UISegmentedControl+SegmentTitles.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -127,7 +143,6 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 505DAF22ACC7604F3C960187;
@@ -146,7 +161,7 @@
 			files = (
 				DDED4A833CF12A6E0B6B081E /* Assets.xcassets in Resources */,
 				4628CF196116BF490F6AE2DF /* LaunchScreen.storyboard in Resources */,
-				227097051EB869B546BD0E23 /* Main.storyboard in Resources */,
+				8832F28B8D5D75E39E2C962F /* TimeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,11 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF937C7B233B663D00F4A9B2 /* ClockModel.swift in Sources */,
-				BF937C7D233B669800F4A9B2 /* ClockView.swift in Sources */,
-				BFF9C61522E72489000FAEC7 /* DateFormats.swift in Sources */,
 				396E8736877B4D722069E4E2 /* ClockApp.swift in Sources */,
+				7CD0DEAE080BE061B9BF1A89 /* ClockModel.swift in Sources */,
+				924EA50A708C571B8F11FCD0 /* ClockView.swift in Sources */,
 				D78FD220141B4248B05835CA /* TimeViewController.swift in Sources */,
+				CE1819C784D150E08062C779 /* UISegmentedControl+SegmentTitles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,10 +252,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Clock/App/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Clock;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -254,10 +266,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Clock/App/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Clock;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
